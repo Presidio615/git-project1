@@ -1,15 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to jquery</title>
+    <link rel="stylesheet" href="./assets/libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images (2).png" type="image/png">
+    <style>
+        .hero {
+            background: url(./assets/images/A-Beginners-Guide-to-AI-Image-Prompts-Generation.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+
+        }
+
+        .Frontend {
+            background: url(./assets/images/senior-front-end-dev.webp), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        .Backend {
+            background: url(./assets/images/gettyimages-1716014733-612x612.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        .advT {
+            color: transparent;
+            -webkit-text-stroke: 2.475px;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-color: #ebdfb9;
+        }
+
+        .welc {
+            background: url(./assets/images/code..2.jpg), linear-gradient(#12121281, #12121261);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        #form {
+            background: transparent;
+            border-radius: 120px;
+            backdrop-filter: blur(8px);
+            border: 2px solid;
+        }
+
+        .location {
+            background: url(./assets/images/3a8573d97002405f959b84b1973af1ca.jpg), rgba(6, 6, 6, 0.57);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-attachment: fixed;
+            padding: 3rem 0rem;
+        }
+
+        .tracks {
+            background: url(./assets/images/wallpaperflare.com_wallpaper\(4\).jpg );
+            background-size: cover;
+            background-position: center;
+            /* background-blend-mode: multiply; */
+            padding: 3rem;
+            border-radius: 120px;
+
+        }
+
+        .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .chatbot {
+            display: none;
+            position: fixed;
+            bottom: 3rem;
+            right: 19px;
+        }
+
+        .chatbotbanner {
+            position: relative;
+            width: 128px;
+            height: 50px;
+            background-color: rgb(226, 226, 213);
+            border-radius: 3e3px;
+        }
+
+        .chatframe {
+            display: none;
+            position: absolute;
+            width: 345px !important;
+            height: 378px !important;
+            bottom: 0rem;
+            right: 8px;
+            background-color: #efefef;
+            border-radius: 13px;
+        }
+
+        .chatbot-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: darkorchid;
+            color: #efefef;
+
+        }
+
+        #support-inner {
+            display: inline-block;
+            padding: .45rem;
+            border-radius: 1rem;
+
+
+        }
+
+        #sender-inner {
+            display: inline-block;
+            padding: .45rem;
+            border-radius: 1rem;
+            float: right;
+        }
+
+        .chatbg {
+            background: url();
+            background-size: cover;
+            background-position: center;
+            height: 227px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>
-        <strong>
-            Hello World!
-        </strong>
-    </h1>
+    <div class="preloader">
+        <div class="loader">
+            <i class="fa fa-spinner fa-spin fa-3x"></i>
+        </div>
+    </div>
+    <header class="container-fluid">
+        <div class="row bg-warning p-4 text-light">
+            <div class="col-11 col-lg-6 m-auto">
+                <strong>Full-stack Developer</strong> the best place to learn full-stack development with the best
+                resources and the best instructors.
+            </div>
+            <div class="col-11 col-lg-6 m-auto text-center">
+                <a href="" class="btn"><i class="fab fa-facebook"></i></a>
+                <a href="" class="btn"><i class="fab fa-twitter"></i></a>
+                <a href="" class="btn"><i class="fab fa-linkedin"></i></a>
+                <a href="" class="btn"><i class="fab fa-instagram"></i></a>
+                <a href="" class="btn"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
+        <div class="container-lg">
+            <a href="" class="navbar-brand">
+                <span class="fw-bold text-warning border border-2 border-warning p-1 d-inline-block" style="border-radius: 70px; corner-shape: bevel;">
+                    <img src="./What-is-Full-stack-development-and-How-to-become-Full-Stack-Developer-810x4301_1-1200x900.webp" width="50" height="50" alt="">
+                </span>
+            </a>
+
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto ps-3">
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Location</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Tour</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Adminstration</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="" class="btn btn-warning m-1">Bookings</a></li>
+                <li class="nav-item"><a href="" class="btn btn-secondary m-1">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero align-content-center" style="height: 100vh;">
+        <div class="container" id="home">
+            <h1 style="font-size: 2.6rem;" class="text-warning">
+                Welcome to Full-stack, <br> the full-stack development
+            </h1>
+            <p class="text-light">
+                Experience the best learning journey with us, we provide the best resources <br> and the best
+                instructors
+                to help you
+                become a full-stack developer.
+            </p>
+            <p>
+                <a href="" class="btn btn-lg btn-warning px-5 py-3 fw-bold get">Get Started <i
+                        class="fa fa-chevron-right ms-2"></i></a>
+            </p>
+        </div>
+    </section>
+
+    <div class="hints"></div>
+
+    <section class=" Frontend" style="height: 100vh;">
+        <div class="container-lg py-4">
+            <div class="text-center py5">
+                <h2 class="fw-bold p-5 text-warning">Frontend Development</h2>
+                <!-- <p class="text-secondary">We provide the best learning experience with the best resources and the best instructors to help you become a fontend developer.</p> -->
+            </div>
+            <div class="container pb-5">
+                <div class="row">
+                    <div class="col-6 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="./assets/images/html-tagst.jpg" alt="">
+                            <div class="card-body">HTML</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="./assets/images/images (1).png" alt="">
+                            <div class="card-body">CSS</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="./assets/images/images.png" height="150" alt="">
+                            <div class="card-body">Bootstrap</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="./assets/images/360_F_75922332_V8jiJ9I2F9d9HqV7RtPzUAxr5s7YHWOd.jpg"
+                                height="150" alt="">
+                            <div class="card-body ">JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Backend">
+        <div class="container-fluid" style="padding: 4rem 0rem;">
+            <div class="container py-5">
+                <h1 style="font-size: 3.9rem;" class="text-center advT">Backend Development</h1>
+
+                <div class="text-center text-warning">
+                    <h3 style="font-size: 3.5rem;">
+                        <span class="display-5 text-warning">Backend is the server-side</span>
+                        <p class="fw-bold">Learn the fundamentals of server-side</p>
+                    </h3>
+                    <p>
+                        <a href=""
+                            class="d-block col-10 col-md-4 col-lg-3 m-auto mt-4 btn btn-light bg-warning-subtle text-warning-emphasis ">Start
+                            To Apply <i class="fa fa-chevron-right ms-2"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid welc" style="padding: 5rem 0rem;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6 text-light fw-bold mb-4 align-content-center">
+                        <h4 class="text-center" style="font-size: 3.8rem;"><strong>Unlock Your Potential</strong>
+                        </h4>
+                    </div>
+                    <div class="col-12 col-lg-6 align-content-center mb-4">
+                        <form action="" method="post" id="form">
+                            <div class="p-4">
+                                <h2 class="text-center py-3 text-light"><strong>Create Full-Stack Account</strong>
+                                </h2>
+                                <div class="">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label lead d-block text-light">Username</label>
+                                        <input type="text" class="form-control form-control form-control-lg">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="" class="form-label lead d-block text-light">E-mail</label>
+                                        <input type="text" class="form-control form-control form-control-lg">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label lead d-block text-light">Passcode</label>
+                                        <input type="text" class="form-control form-control form-control-lg">
+                                    </div>
+
+                                    <div class="my-4">
+                                        <button type="submit"
+                                            class="btn btn-primary px-5 py-2 d-block w-100 text-light">Submit</button>
+
+                                        <p class="text-light mt-2-ms-4"><b>Already A Developer?
+                                                <a href=""
+                                                    class="d-inline-block text-success">Signin
+                                                </a></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid location">
+            <div class="container tracks">
+                <h4 class="fw-bold text-center pt-5 text-warning"
+                    style="font-size: 2.8rem; text-shadow: 2px 3px gray;">Location Tracks
+                </h4>
+                <div class="col-7 col-lg-5 m-auto">
+                    <div class="base">
+                        <ul class="base-list list-unstyled">
+                            <li class="base-spot p-3 fw-bold mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">American</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">Canadan</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">United State</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">Dubai</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">American</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">American</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">American</li>
+                            <li class="base-spot p-3 fw-bold  mb-3 bg-warning-subtle text-warning-emphasis"
+                                style="border-radius: 3e3px;">American</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="text-center my-5" style="font-size: 3.5rem;">Location Tracks</h3>
+        <div class="container mb-4" style="height: 50vh;">
+            <div class="w-100 h-100 rounded shadow-lg" id="map"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="newsletter p-5 bg-dark">
+            <h4 class="text-center text-light">
+                Subscribe To Website Newsletter
+            </h4>
+            <div class="col-11 col-lg-4 m-auto">
+                <form action="" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg">
+                        <button type="submit" class="btn btn-warning">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid bg-dark text-light">
+                <div class="container">
+                    <div class="row py-3">
+                        <div class="col-lg-6 py-2">
+                            <h4>Full-Stack Development</h4>
+                            <p class="lead">
+                                Learn frontend and backend development with pratical project.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 py-2">
+                            <h5>Contact</h5>
+                            <p>Email: nd09079927615@gmail.com</p>
+                            <p>Phone: 09011973177</p>
+                        </div>
+
+                        <div class="col-6 col-lg-6 py-2">
+                            <h4>Quick Links</h4>
+                            <ul class="navbar-nav flex-column">
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">Home</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">Courses</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">Projects</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-lg-6 py-2">
+                            <h4>Technologies</h4>
+                            <ul class="list-unstyled">
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">HTML</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">CSS</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">Bootstrap</a>
+                                </li>
+                                <li class="nav-item"><a href="" class="text-decoration-none p-1">JavaScript</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <hr class=" m-0">
+
+            <div class="text-center bg-dark p-4 text-light">
+                &copy; 1875 -
+                <span>
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                </span> Full Stack Development
+                All right reserved. <b>You ip:</b><?= $_SERVER['REMOTE_ADDR']; ?>
+            </div>
+        </footer>
+
+    </section>
+
+    <div class="modal fade" id="cookie-banner">
+        <div class="modal-dialog  fixed-bottom">
+            <div class="modal-content">
+                <div class="card card-body">
+                    <h4>Cookie Consent</h4>
+                    <div class="card-text">
+                        Our sites uses cookies, to help track site useage and analytics these hlps us to improve on
+                        our future products and services
+                    </div>
+                    <p class="py-4">
+                        <a href="" class="btn btn-warning" data-bs-dismiss="modal">Accept</a>
+                        <a href="" class="btn btn-outline-primary" data-bs-dismiss="modal">Preferrence</a>
+                        <a href="" class="btn btn-outline-dark" data-bs-dismiss="modal">Deny</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot">
+        <div class="chatbotbanner">
+            <div class="chatframe overflow-hidden">
+                <div class="header bg-primary text-light p-4">
+                    <a href="javascript: void(0)" class="text-light btn-close chatclose float-end"></a>
+                    <h4>Website chat</h4>
+                </div>
+
+                <div class="p-2">
+                    <div class="card card-body chatbg">
+                        <div class="mb-3" id="support">
+                            <span class="bg-info" id="support-inner">
+                                Hello! am Zivy, your online support assistant.
+                            </span>
+                        </div>
+
+                        <div class="mb-3" id="sender">
+                            <span class="bg-primary text-light" id="sender-inner">
+                                hi
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message px-1 position-relative bottom-0">
+                    <div class="input-group rounded-pill border-1 border-info mt-1">
+                        <input type="text" class="form-control shadow-none chatmsg">
+                        <button class="btn chatsend">
+                            <i class="fa fa-location-arrow text-info" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-100 d-flex align-content-center align-items-center">
+                <div class="chatbot-btn text-center align-content-center">
+                    <i class="fa fa-robot"></i>
+                </div>
+                <p class="" style="font-size: 10px; padding-top: 10px; padding-left: 3px;">Need any help?</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const map = new maplibregl.Map({
+            style: " https://tiles.openfreemap.org/styles/liberty",
+            center: [13.388, 52.517],
+            zoom: 9.5,
+            container: "map",
+        });
+    </script>
+
+
+
+    <script src="./assets/libs/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+    <script src="./assets/src/jquery-4.0.0.min.js"></script>
+    <script src="./assets/src/main.js"></script>
 </body>
+
 </html>
